@@ -1,0 +1,24 @@
+﻿<div id="foreground">
+    @if (User.IsInRole("Admin"))
+    {
+        @await Component.InvokeAsync("Customers");
+    }
+    else if (User.IsInRole("Customer"))
+    {
+        //Render customer starter view
+    }
+</div>
+
+<div id="menu">
+    @if (User.IsInRole("Admin"))
+    {
+        @await Html.PartialAsync("CustomerMenu");
+    }
+
+    else if (User.IsInRole("Customer"))
+    {
+        @await Html.PartialAsync("CustomerMenu");
+    }
+</div>
+
+

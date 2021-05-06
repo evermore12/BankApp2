@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "jquery-ajax-unobtrusive@3.2.6",
+      "destination": "lib/jquery-ajax-unobtrusive/",
+      "files": [
+        "jquery.unobtrusive-ajax.min.js"
+      ]
+    },
+    {
+      "library": "twitter-bootstrap@4.6.0",
+      "destination": "wwwroot/lib/twitter-bootstrap/",
+      "files": [
+        "js/bootstrap.js",
+        "css/bootstrap.css"
+      ]
+    }
+  ]
+}

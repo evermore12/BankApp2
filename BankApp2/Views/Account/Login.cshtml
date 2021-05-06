@@ -1,0 +1,30 @@
+﻿@model LoginModel
+<div class="row c-row-padding">
+    <div class="col-5 mx-auto">
+        <div class="card">
+            <div class="card-body">
+                <form asp-action="Login" asp-controller="Account">
+                    <div class="form-group">
+                        <label asp-for="Username"></label>
+                        <input class="form-control" asp-for="Username" />
+                        <span asp-validation-for="Username" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password"></label>
+                        <input class="form-control" asp-for="Password" type="password" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+
+                    </div>
+                    <div class="form-row">
+                        <div asp-validation-summary="ModelOnly" class="text-danger col-auto"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col 2">
+                            <button class="btn btn-primary" type="submit">Logga in</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
