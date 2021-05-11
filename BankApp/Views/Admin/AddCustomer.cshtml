@@ -1,0 +1,92 @@
+﻿@model Customer
+
+<form id="myform" asp-action="AddCustomer" asp-controller="Admin" data-ajax="true" data-ajax-update="#result">
+    <div class="ui centered container grid" style="margin-top: 10em;">
+        <div class="nine wide column">
+            <div class="ui fluid styled accordion">
+                <div class="ui form">
+                    <div class="active title">
+                        <i class="icon dropdown"></i>
+                        Customer
+                    </div>
+                    <div class="active content">
+                        <div class="field">
+                            <div class="two fields">
+                                <div class="field">
+                                    <label asp-for="Givenname"></label>
+                                    <input type="text" asp-for="Givenname">
+                                    <span asp-validation-for="Givenname"></span>
+                                </div>
+                                <div class="field">
+                                    <label asp-for="Surname"></label>
+                                    <input type="text" asp-for="Surname">
+                                    <span asp-validation-for="Surname"></span>
+                                </div>
+                            </div>
+                            <div class="three fields">
+                                <div class="field">
+                                    <label asp-for="Streetaddress"></label>
+                                    <input type="text" asp-for="Streetaddress">
+                                    <span asp-validation-for="Streetaddress"></span>
+                                </div>
+                                <div class="field">
+                                    <label asp-for="Zipcode"></label>
+                                    <input type="text" asp-for="Zipcode">
+                                    <span asp-validation-for="Zipcode"></span>
+                                </div>
+                                <div class="field">
+                                    <label asp-for="Country"></label>
+                                    <input type="text" asp-for="Country">
+                                    <span asp-validation-for="Country"></span>
+                                </div>
+                            </div>
+                            <div class="two fields">
+                                <div class="field">
+                                    <label asp-for="Gender"></label>
+                                    <input type="text" asp-for="Gender">
+                                    <span asp-validation-for="Gender"></span>
+                                </div>
+                                <div class="field">
+                                    <label asp-for="Birthday"></label>
+                                    <input type="date" asp-for="Birthday">
+                                    <span asp-validation-for="Birthday"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion">
+                            <div class="title">
+                                <i class="icon dropdown"></i>
+                                Login
+                            </div>
+                            <div class="content">
+                                @await Component.InvokeAsync("CustomerLogin")
+                            </div>
+                        </div>
+                        <div class="accordion">
+                            <div class="title">
+                                <i class="icon dropdown"></i>
+                                Accounts
+                            </div>
+                            <div class="content">
+                                @await Component.InvokeAsync("CustomerAccounts")
+                            </div>
+                        </div>
+                        <div id="result">
+
+                        </div>
+                        <button type="submit" class="ui fluid primary button">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script>
+    $('.ui.accordion').accordion();
+    $(document).ready(function () {
+
+        $.validator.unobtrusive.parse("#myform");
+
+    });
+
+</script>

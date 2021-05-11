@@ -1,0 +1,14 @@
+﻿@model List<ModelError>
+        <div class="ui negative message">
+            <div class="header">Error</div>
+            <ul class="list">
+                @foreach (var item in Model)
+                {
+
+                        <li>@item.ErrorMessage</li>
+                    
+                }
+            </ul>
+        </div>
+    
+

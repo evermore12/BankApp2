@@ -1,0 +1,32 @@
+﻿@model BankApp.ViewModels.AccountsModel
+@for (int i = 0; i < Model.Accounts.Count; i++)
+    {
+        <div class="accordion">
+            <div class="active title">
+                <i class="icon dropdown"></i>
+                @Model.Accounts[i].AccountId
+            </div>
+            <div class="content">
+                <div class="ui form">
+                    <div class="field">
+                        <div class="two fields">
+                            <div class="field">
+                                <label class="disabled" asp-for="Accounts[i].Balance"></label>
+                                <div class="ui disabled input">
+                                    <input type="text" asp-for="Accounts[i].Balance">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label asp-for="Accounts[i].AccountTypes"></label>
+                                <select asp-items="Model.AccountTypes" asp-for="Accounts[i].AccountTypesId"></select>
+                                <input hidden asp-for="@Model.Accounts[i].AccountId" value="@Model.Accounts[i].AccountId"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+
+
